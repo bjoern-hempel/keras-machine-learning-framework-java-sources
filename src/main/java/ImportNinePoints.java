@@ -35,18 +35,20 @@ import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfig
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
+import org.nd4j.linalg.io.ClassPathResource;
 import org.slf4j.Logger;
 import java.io.IOException;
 
 public class ImportNinePoints {
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(ImportNinePoints.class);
 
-    private static String modelPathFull="C:\\Users\\bjoern\\Development\\keras-machine-learning-suite\\model.h5";
+    private static String modelPath="model.h5";
 
     public static void main(String [] args) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
         log.info("\n\nImport Nine Points\n\n");
 
-        MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(modelPathFull);
+        String fullModel = new ClassPathResource(modelPath).getFile().getPath();
+        MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(fullModel);
 
         double prediction = 0;
         double x1 = 0;
