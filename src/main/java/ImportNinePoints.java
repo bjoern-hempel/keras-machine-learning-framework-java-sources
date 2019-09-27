@@ -18,14 +18,23 @@ public class ImportNinePoints {
         MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(modelPathFull);
 
         double prediction = 0;
+        double x1 = 0;
+        double x2 = 0;
+        String output = "";
 
         int inputs = 2;
         INDArray features = Nd4j.create(1, inputs);
 
-        features.putScalar(0, 0, 0.5);
-        features.putScalar(0, 1, 0.5);
-
-        prediction = model.output(features).getDouble(0);
-        log.info(String.valueOf(prediction));
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                x1 = i * 0.5;
+                x2 = j * 0.5;
+                features.putScalar(0, 0, x1);
+                features.putScalar(0, 1, x2);
+                prediction = model.output(features).getDouble(0);
+                output = String.format("x1 = %.2f; x2 = %.2f; prediction = %.2f", x1, x2, prediction);
+                log.info(output);
+            }
+        }
     }
 }
