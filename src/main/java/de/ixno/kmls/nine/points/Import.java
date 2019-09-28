@@ -1,5 +1,5 @@
-/** 
- * The ImportNinePoints class imports a keras model for a nine points example.
+/**
+ * The de.ixno.kmls.nine.points.ImportNinePoints class imports a keras model for a nine points example.
  *
  * @author Björn Hempel <bjoern@hempel.li>
  * @version 1.0
@@ -29,6 +29,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package de.ixno.kmls.nine.points;
+
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
 import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
 import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
@@ -36,12 +38,9 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.io.ClassPathResource;
-import org.slf4j.Logger;
 import java.io.IOException;
 
-public class ImportNinePoints {
-    private final static Logger log = org.slf4j.LoggerFactory.getLogger(ImportNinePoints.class);
-
+public class Import {
     private static String modelPath="model.h5";
 
     public static void main(String [] args) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
