@@ -31,8 +31,14 @@
  */
 package de.ixno.kmls.start;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Hello {
-    public static void main(String [] args) {
-        System.out.println("Hello world!");
+    public static void main(@NotNull String [] args) {
+        if (args.length > 0) {
+            System.out.println(String.format("Hello world! Your name is %s.", args[0]));
+        } else {
+            System.out.println(String.format("Hello world!"));
+        }
     }
 }
