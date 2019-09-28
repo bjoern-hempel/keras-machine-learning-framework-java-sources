@@ -8,6 +8,7 @@ This repository contains the source code for the Keras Java import of the [Keras
 $ git clone https://github.com/bjoern-hempel/keras-machine-learning-suite-java-import.git
 $ cd keras-machine-learning-suite-java-import
 $ mvn clean install
+$ mvn compile
 ```
 
 ## A. Further Tutorials
