@@ -9,6 +9,8 @@ $ git clone https://github.com/bjoern-hempel/keras-machine-learning-suite-java-i
 $ cd keras-machine-learning-suite-java-import
 $ mvn clean install
 $ mvn package
+$ java -cp target/classes de.ixno.kmls.start.Hello
+Hello world!
 $ java -cp target/dl4j-import-1.0.jar de.ixno.kmls.start.Hello
 Hello world!
 ```
