@@ -15,6 +15,8 @@ Hello world!
 
 # Nine Points Example
 
+You can find more information here: [Nine Points Example @ keras-machine-learning-suite](https://github.com/bjoern-hempel/keras-machine-learning-suite/blob/master/markdown/demos/nine_points.md)
+
 ```bash
 $ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.exec"
 
