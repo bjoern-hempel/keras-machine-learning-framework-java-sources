@@ -9,8 +9,8 @@ $ git clone https://github.com/bjoern-hempel/keras-machine-learning-suite-java-i
 $ cd keras-machine-learning-suite-java-import
 $ mvn clean install
 $ mvn package
-$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.start.Hello" -Dexec.args="Jon"
-Hello world! Your name is Jon.
+$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.start.Hello" -Dexec.args="John"
+Hello world! Your name is John.
 ```
 
 # Nine Points Example
