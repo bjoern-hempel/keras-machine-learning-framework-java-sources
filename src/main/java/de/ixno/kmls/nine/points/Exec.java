@@ -1,5 +1,6 @@
 /**
- * The de.ixno.kmls.nine.points.ImportNinePoints class imports a keras model for a nine points example.
+ * The de.ixno.kmls.nine.points.ImportNinePoints class imports a keras model for a nine points example
+ * and does some predictions.
  *
  * @author Björn Hempel <bjoern@hempel.li>
  * @version 1.0
@@ -40,33 +41,42 @@ import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.io.ClassPathResource;
 import java.io.IOException;
 
-public class Import {
+public class Exec {
     private static String modelPath="model.h5";
 
     public static void main(String [] args) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
+        double prediction, x1, x2;
+        String output;
+        int inputs = 2;
+
+
+        /* print header */
         System.out.println("\n\nImport Nine Points\n\n");
 
+
+        /* loads the model */
+        System.out.println("Start loading the model:");
+        System.out.println("------------------------");
         String fullModel = new ClassPathResource(modelPath).getFile().getPath();
         MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(fullModel);
+        System.out.println("------------------------\n\n");
 
-        double prediction;
-        double x1;
-        double x2;
-        String output;
 
-        int inputs = 2;
+        /* Prints out the prediction */
+        System.out.println("Prediction results: x_1 ∈ {0, 0.5, 1} ∧ x_2 ∈ {0, 0.5, 1}");
+        System.out.println("---------------------------------------------------------");
         INDArray features = Nd4j.create(1, inputs);
-
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 x1 = i * 0.5;
                 x2 = j * 0.5;
                 features.putScalar(0, 0, x1);
                 features.putScalar(0, 1, x2);
-                prediction = model.output(features).getDouble(0);
+                prediction = Math.round(model.output(features).getDouble(0) * 100.) / 100.;
                 output = String.format("x1: %5.2f;   x2: %5.2f;   prediction: %5.2f", x1, x2, prediction);
                 System.out.println(output);
             }
         }
+        System.out.println("---------------------------------------------------------\n\n");
     }
 }
