@@ -10,6 +10,7 @@ $ cd keras-machine-learning-suite-java-import
 $ mvn clean install
 $ mvn package
 $ java -cp target/dl4j-import-1.0.jar de.ixno.kmls.start.Hello
+Hello world!
 ```
 
 ## A. Further Tutorials
