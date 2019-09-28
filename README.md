@@ -13,6 +13,26 @@ $ mvn exec:java -Dexec.mainClass="de.ixno.kmls.start.Hello"
 Hello world!
 ```
 
+# Nine Points Example
+
+```bash
+$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.exec"
+
+Prediction results: x_1 ∈ {0, 0.5, 1} ∧ x_2 ∈ {0, 0.5, 1}
+---------------------------------------------------------
+x1:  0,00;   x2:  0,00;   prediction:  1,00
+x1:  0,00;   x2:  0,50;   prediction:  1,00
+x1:  0,00;   x2:  1,00;   prediction:  1,00
+x1:  0,50;   x2:  0,00;   prediction:  1,00
+x1:  0,50;   x2:  0,50;   prediction:  0,00
+x1:  0,50;   x2:  1,00;   prediction:  1,00
+x1:  1,00;   x2:  0,00;   prediction:  1,00
+x1:  1,00;   x2:  0,50;   prediction:  1,00
+x1:  1,00;   x2:  1,00;   prediction:  1,00
+---------------------------------------------------------
+
+```
+
 ## A. Further Tutorials
 
 * [An introduction to artificial intelligence](https://github.com/friends-of-ai/an-introduction-to-artificial-intelligence)
