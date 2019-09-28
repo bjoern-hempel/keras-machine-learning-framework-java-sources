@@ -40,20 +40,20 @@ import org.slf4j.Logger;
 import java.io.IOException;
 
 public class ImportNinePoints {
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(ImportNinePoints.class);
+    private final static Logger log = org.slf4j.LoggerFactory.getLogger(ImportNinePoints.class);
 
     private static String modelPath="model.h5";
 
     public static void main(String [] args) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
-        log.info("\n\nImport Nine Points\n\n");
+        System.out.println("\n\nImport Nine Points\n\n");
 
         String fullModel = new ClassPathResource(modelPath).getFile().getPath();
         MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(fullModel);
 
-        double prediction = 0;
-        double x1 = 0;
-        double x2 = 0;
-        String output = "";
+        double prediction;
+        double x1;
+        double x2;
+        String output;
 
         int inputs = 2;
         INDArray features = Nd4j.create(1, inputs);
@@ -65,8 +65,8 @@ public class ImportNinePoints {
                 features.putScalar(0, 0, x1);
                 features.putScalar(0, 1, x2);
                 prediction = model.output(features).getDouble(0);
-                output = String.format("x1 = %.2f; x2 = %.2f; prediction = %.2f", x1, x2, prediction);
-                log.info(output);
+                output = String.format("x1: %5.2f;   x2: %5.2f;   prediction: %5.2f", x1, x2, prediction);
+                System.out.println(output);
             }
         }
     }
