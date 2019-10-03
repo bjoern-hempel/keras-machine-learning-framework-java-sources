@@ -18,7 +18,7 @@ Hello world! Your name is John.
 You can find more information here: [Nine Points Example @ keras-machine-learning-suite](https://github.com/bjoern-hempel/keras-machine-learning-suite/blob/master/markdown/demos/nine_points.md)
 
 ```bash
-$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.exec"
+$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.Exec"
 
 Prediction results: x_1 ∈ {0, 0.5, 1} ∧ x_2 ∈ {0, 0.5, 1}
 ---------------------------------------------------------
