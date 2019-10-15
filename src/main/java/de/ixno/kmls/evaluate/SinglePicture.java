@@ -1,6 +1,6 @@
 /**
- * The de.ixno.kmls.nine.points.ImportNinePoints class imports a keras model for a nine points example
- * and does some predictions.
+ * The de.ixno.kmls.evaluate.SinglePicture class imports a given keras transfer
+ * learning model for evaluation a given image.
  *
  * @author Björn Hempel <bjoern@hempel.li>
  * @version 1.0
