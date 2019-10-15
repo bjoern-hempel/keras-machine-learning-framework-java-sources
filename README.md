@@ -1,12 +1,12 @@
-# Keras Machine Learning Suite (Java Import)
+# Keras Machine Learning Framework (Java Sources)
 
-This repository contains the source code for the Keras Java import of the [Keras Machine Learning Suite Repository](https://github.com/bjoern-hempel/keras-machine-learning-suite). See there for more information.
+This repository contains the source code for the Keras Java import of the [Keras Machine Learning Framework Repository](https://github.com/bjoern-hempel/keras-machine-learning-framework). See there for more information.
 
 # Installation
 
 ```bash
-$ git clone https://github.com/bjoern-hempel/keras-machine-learning-suite-java-import.git
-$ cd keras-machine-learning-suite-java-import
+$ git clone https://github.com/bjoern-hempel/keras-machine-learning-framework-java-sources.git
+$ cd keras-machine-learning-framework-java-sources
 $ mvn clean install
 $ mvn package
 $ mvn exec:java -Dexec.mainClass="de.ixno.kmls.start.Hello" -Dexec.args="John"
@@ -15,10 +15,10 @@ Hello world! Your name is John.
 
 # Nine Points Example
 
-You can find more information here: [Nine Points Example @ keras-machine-learning-suite](https://github.com/bjoern-hempel/keras-machine-learning-suite/blob/master/markdown/demos/nine_points.md)
+You can find more information here: [Nine Points Example @ keras-machine-learning-framework](https://github.com/bjoern-hempel/keras-machine-learning-framework/blob/master/markdown/demos/nine_points.md)
 
 ```bash
-$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.exec"
+$ mvn exec:java -Dexec.mainClass="de.ixno.kmls.nine.points.Exec"
 
 Prediction results: x_1 ∈ {0, 0.5, 1} ∧ x_2 ∈ {0, 0.5, 1}
 ---------------------------------------------------------
