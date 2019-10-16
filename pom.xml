@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.ixno.kmls</groupId>
-    <artifactId>dl4j-import</artifactId>
+    <artifactId>java-client</artifactId>
     <version>1.0</version>
 
     <properties>
         <dl4j.version>1.0.0-beta3</dl4j.version>
+        <palladian.version>2.0.0-SNAPSHOT</palladian.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
@@ -17,11 +18,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.2</version>
+                <version>3.1</version>
                 <configuration>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <compilerArguments>
+                        <encoding>UTF-8</encoding>
+                    </compilerArguments>
+                    <showDeprecation>true</showDeprecation>
+                    <verbose>false</verbose>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -55,7 +65,11 @@
             <artifactId>nd4j-native-platform</artifactId>
             <version>${dl4j.version}</version>
         </dependency>
-
+        <dependency>
+            <artifactId>palladian-retrieval</artifactId>
+            <groupId>ws.palladian</groupId>
+            <version>${palladian.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>deeplearning4j-core</artifactId>
